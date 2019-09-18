@@ -5,29 +5,29 @@
   <v-container class="my-5">
 
     <v-card flat v-for="project in projects" :key="project.title">
-      <v-layout row wrap :class="`pa3 project ${project.status}`">
+      <v-row wrap :class="`pa3 project ${project.status}`">
 
-        <v-flex xs12 md6>
+        <v-col xs12 md6>
           <div class="caption grey--text">Project</div>
           <div>{{ project.title }}</div>
-        </v-flex>
+        </v-col>
 
-        <v-flex xs6 sm4 md2>
+        <v-col xs6 sm4 md2>
           <div class="caption grey--text">Person</div>
           <div>{{ project.person }}</div>
-        </v-flex>
+        </v-col>
 
-        <v-flex xs6 sm4 md2>
+        <v-col xs6 sm4 md2>
           <div class="caption grey--text">Due By</div>
           <div>{{ project.due }}</div>
-        </v-flex>
+        </v-col>
 
-        <v-flex xs2 sm4 md2>
+        <v-col xs2 sm4 md2>
           <div class="caption grey--text">Status</div>
           <div>{{ project.status }}</div>
-        </v-flex>
-        <v-divider></v-divider>
-      </v-layout>
+        </v-col>
+        
+      </v-row>
 
       <v-divider></v-divider>
 
