@@ -8,7 +8,7 @@
         
         <v-tooltip top>
           <template v-slot:activator="{ on }">
-            <v-btn small flat text color="grey" @click="sortBy('title')" v-on="on">
+            <v-btn small text color="grey" @click="sortBy('title')" v-on="on">
               <v-icon left small>mdi-folder</v-icon>
               <span class="caption text-lowercase">By project name</span>
             </v-btn>
@@ -19,7 +19,7 @@
 
         <v-tooltip top>
           <template v-slot:activator="{ on }">
-            <v-btn small flat text color="grey" @click="sortBy('person')" v-on="on">
+            <v-btn small text color="grey" @click="sortBy('person')" v-on="on">
               <v-icon left small>mdi-account</v-icon>
               <span class="caption text-lowercase">By person</span>
             </v-btn> 
@@ -31,7 +31,7 @@
        
       </v-row>
 
-      <v-card flat v-for="project in projects" :key="project.title">
+      <v-card v-for="project in projects" :key="project.title" flat>
         <v-row wrap :class="`pa3 project ${project.status}`">
 
           <v-col :xs="12" :md="6" cols="12">
