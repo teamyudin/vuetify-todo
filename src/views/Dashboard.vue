@@ -7,22 +7,22 @@
     <v-card flat v-for="project in projects" :key="project.title">
       <v-row wrap :class="`pa3 project ${project.status}`">
 
-        <v-col xs12 md6>
+        <v-col :xs="12" :md="6" cols="12">
           <div class="caption grey--text">Project</div>
           <div>{{ project.title }}</div>
         </v-col>
 
-        <v-col xs6 sm4 md2>
+        <v-col :xs="6" :sm="4" :md="2" cols="4">
           <div class="caption grey--text">Person</div>
           <div>{{ project.person }}</div>
         </v-col>
 
-        <v-col xs6 sm4 md2>
+        <v-col :xs="6" :sm="4" :md="2" cols="4">
           <div class="caption grey--text">Due By</div>
           <div>{{ project.due }}</div>
         </v-col>
 
-        <v-col xs2 sm4 md2>
+        <v-col :xs="2" :sm="4" :md="2" cols="12">
           <div class="caption grey--text">Status</div>
           <div>{{ project.status }}</div>
         </v-col>
