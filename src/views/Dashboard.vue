@@ -2,38 +2,39 @@
   <div>
     <v-subheader>Dashboard</v-subheader>
 
-  <v-container class="my-5">
+    <v-container class="my-5">
 
-    <v-card flat v-for="project in projects" :key="project.title">
-      <v-row wrap :class="`pa3 project ${project.status}`">
+      <v-card flat v-for="project in projects" :key="project.title">
+        <v-row wrap :class="`pa3 project ${project.status}`">
 
-        <v-col :xs="12" :md="6" cols="12">
-          <div class="caption grey--text">Project</div>
-          <div>{{ project.title }}</div>
-        </v-col>
+          <v-col :xs="12" :md="6" cols="12">
+            <div class="caption grey--text">Project</div>
+            <div>{{ project.title }}</div>
+          </v-col>
 
-        <v-col :xs="6" :sm="4" :md="2" cols="4">
-          <div class="caption grey--text">Person</div>
-          <div>{{ project.person }}</div>
-        </v-col>
+          <v-col :xs="6" :sm="4" :md="2" cols="4">
+            <div class="caption grey--text">Person</div>
+            <div>{{ project.person }}</div>
+          </v-col>
 
-        <v-col :xs="6" :sm="4" :md="2" cols="4">
-          <div class="caption grey--text">Due By</div>
-          <div>{{ project.due }}</div>
-        </v-col>
+          <v-col :xs="6" :sm="4" :md="2" cols="4">
+            <div class="caption grey--text">Due By</div>
+            <div>{{ project.due }}</div>
+          </v-col>
 
-        <v-col :xs="2" :sm="4" :md="2" cols="12">
-          <div class="caption grey--text">Status</div>
-          <div>{{ project.status }}</div>
-        </v-col>
-        
-      </v-row>
+          <v-col :xs="2" :sm="4" :md="2" cols="12">
+              <v-chip small :class="`${project.status} white--text caption my-2`" >
+                {{ project.status }}
+              </v-chip>
+          </v-col>
 
-      <v-divider></v-divider>
+        </v-row>
 
-    </v-card>   
+        <v-divider></v-divider>
 
-  </v-container>
+      </v-card>   
+
+    </v-container>
 
   </div>
 </template>
@@ -48,7 +49,7 @@ export default {
         { title: 'Code up the homepage', person: 'Chun Li', due: '10th Jan 2019', status: 'complete', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
         { title: 'Design video thumbnails', person: 'Ryu', due: '20th Dec 2018', status: 'complete', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
         { title: 'Create a community forum', person: 'Gouken', due: '20th Oct 2018', status: 'overdue', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt consequuntur eos eligendi illum minima adipisci deleniti, dicta mollitia enim explicabo fugiat quidem ducimus praesentium voluptates porro molestias non sequi animi!'},
-      ]      
+      ],
     }
   },
   components: {
@@ -68,5 +69,18 @@ export default {
   .project.overdue{
     border-left: 4px solid tomato
   }  
+
+  .v-chip.complete{
+    background: #3cd1c2!important;
+  }
+
+  .v-chip.ongoing{
+    background: #ffaa2c!important;
+    
+  }
+
+  .v-chip.overdue{
+    background: #f83e70!important;
+  }    
 </style>
 
