@@ -27,11 +27,13 @@
 
             <v-app-bar-nav-icon class="grey--text" @click="drawer =! drawer"/>
 
-            <v-toolbar-title class="text-uppercase grey--text">
-                <span class="font-weight-light">Todo</span>
-                <span>App</span>
-            </v-toolbar-title>
-
+            <router-link to="/" class="toolbar-title" tag="span" :style="{ cursor: 'pointer'}">
+                <v-toolbar-title class="text-uppercase grey--text" to="/" router>
+                    <span class="font-weight-light">Todo</span>
+                    <span>App</span>
+                </v-toolbar-title>
+            </router-link>
+            
             <v-spacer></v-spacer>
 
             <v-menu offset-y>
