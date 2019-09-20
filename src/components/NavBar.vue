@@ -2,7 +2,7 @@
     <nav>
         <v-navigation-drawer v-model="drawer" app clipped>
 
-            <v-layout column align-center>
+            <v-layout column align-center class="mt-3">
                 <v-avatar size="100" > 
                     <img class="text-lg-center" src="https://api.adorable.io/avatars/188/abott@adorable.png'">
                 </v-avatar>
@@ -21,6 +21,14 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
+
+            <v-spacer fill-height></v-spacer>
+
+            <v-layout column align-center>
+                <v-switch label="Dark Theme" v-model="goDark" @click="setTheme"></v-switch>
+            </v-layout>
+
+            
         </v-navigation-drawer>
 
         <v-app-bar app flat clipped-left>
@@ -33,7 +41,7 @@
                     <span>App</span>
                 </v-toolbar-title>
             </router-link>
-            
+
             <v-spacer></v-spacer>
 
             <v-menu offset-y>
@@ -69,6 +77,7 @@ export default {
     data() {
         return {
             drawer: true,
+            goDark: false,
             links: [
                     { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
                     { icon: 'mdi-folder', text: 'My Projects', route: '/projects' },
@@ -76,7 +85,14 @@ export default {
                 ],         
         }
     },
-    components: {
+    computed: {
+        setTheme() {
+            if (this.goDark == true) {
+                return (this.$vuetify.theme.dark = true);
+            } else {
+                return (this.$vuetify.theme.dark = false);
+            }
+        }
     },
 };
 </script>
