@@ -2,15 +2,17 @@
     <nav>
         <v-navigation-drawer v-model="drawer" app clipped>
 
-            <v-layout column align-center class="mt-3">
+            <v-layout column align-center class="mt-5">
                 <v-avatar size="100" > 
                     <img class="text-lg-center" src="https://api.adorable.io/avatars/188/abott@adorable.png'">
                 </v-avatar>
 
                 <v-subheader>Dmitry Yudin</v-subheader>
+
+                <Popup/>
             </v-layout>
 
-            <v-list class="pt-0">
+            <v-list class="pt-5">
                 <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
                     <v-list-item-icon>
                         <v-icon>{{ link.icon }}</v-icon>
@@ -73,7 +75,13 @@
 
 <script>
 
+import Popup from '@/components/Popup.vue';
+
 export default {
+    components:{
+        Popup,
+    },
+
     data() {
         return {
             drawer: true,
